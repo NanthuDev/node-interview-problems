@@ -87,35 +87,13 @@ const students = [
   { name: 'David', status: 'InActive' },
 ];
 
-
-
-//4.Count the status
-const groupByStatus2 = (arr)=>{
-  return arr.reduce((grouped,item)=>{
-    let key = item.status;
-     if(!grouped[key]){
-      grouped[key] = 0
-    }
-   grouped[key] = grouped[key]+1
-    return grouped;
-  },{})
-}
-
-const students2 = [
-  { name: 'Alice', status: 'Active' },
-  { name: 'Bob', status: 'Pending' },
-  { name: 'Charlie', status: 'Pending'},
-  { name: 'David', status: 'InActive' },
-];
-
- 
-
 // Example usage:
-console.log(groupByStatus2(students2));
+console.log(groupByStatus(students));
  [
   {"Pending":2},
   {"Active":1},
   {"InActive":1}
  ] // Output: 10
  
-  
+
+ 
