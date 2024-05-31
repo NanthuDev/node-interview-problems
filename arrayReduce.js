@@ -33,6 +33,38 @@ console.log(countOccurrences(['apple', 'banana', 'apple', 'orange', 'banana', 'a
 // Output: { apple: 3, banana: 2, orange: 1 }
 
 
+//4. Group objects by property
+
+const groupBy = (arr,property)=>{
+  return arr.reduce((grouped,item)=>{
+    const key = item[property];
+    if(!grouped[key]){
+      grouped[key] = []
+    }
+    grouped[key].push(item)
+    return grouped;
+     
+  },{})
+}
+
+
+
+
+// Example usage:
+const people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Bob', age: 25 },
+  { name: 'Charlie', age: 21 },
+  { name: 'David', age: 25 },
+];
+console.log(groupBy(people, 'age'));
+// Output: 
+// {
+//   '21': [ { name: 'Alice', age: 21 }, { name: 'Charlie', age: 21 } ],
+//   '25': [ { name: 'Bob', age: 25 }, { name: 'David', age: 25 } ]
+// }
+
+
 
  
   
